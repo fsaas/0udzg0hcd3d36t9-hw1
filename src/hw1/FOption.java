@@ -7,14 +7,7 @@ import java.util.function.Consumer;
 import java.util.function.Function; 
 import java.util.function.Predicate; 
 import java.util.function.Supplier; 
-/*
- * ¹®Á¦ ¹è°æ: What we need is a better way to model the absence and presence of a value.
- * It is a class that encapsulates an optional value
- * You can view Optional as a single-value container that either contains a value or doesn't (it is then said to be "empty") 
- * 
- * Âü°í: https://www.oracle.com/technetwork/articles/java/java8-optional-2175753.html
- * Âü°í2: https://www.baeldung.com/java-optional
-*/
+
 public final class FOption<T> {
 	private final T value;
 	private final boolean defined;
@@ -33,7 +26,7 @@ public final class FOption<T> {
 		return new FOption<T>(null, false);
 	}
 	
-	// Java optional¿¡¼­ cast 
+	// Java optionalÂ¿Â¡Â¼Â­ cast 
 	public static <T> FOption<T> from(Optional<T> opt) { 
 		return new FOption<T>(opt.get(), true);
 	}
